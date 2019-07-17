@@ -1,0 +1,27 @@
+{
+  "name": "JIRA Link Fixer",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension forces any link that isn't part of JIRA open in a new tab",
+  "homepage_url": "https://whittle.dev",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "contentSettings",
+    "https://*.atlassian.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.atlassian.net/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
